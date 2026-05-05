@@ -12,10 +12,10 @@
 :root{--bg:#0F0E0C;--bg-2:#161412;--bg-3:#1E1A16;--line:#2A2520;--line-2:#3A332C;--text:#F5EFE6;--text-2:#B8AC9C;--text-3:#756B5F;--gold:#D4A574;--gold-2:#B8895A;--gold-pale:#E8D4B0;--accent:#7BB6BC}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden;padding-top:37px}
 .container{width:100%;max-width:1180px;margin:0 auto;padding:0 32px}
 /* Validity bar */
-.validity-bar{background:rgba(212,165,116,0.05);border-bottom:1px solid rgba(212,165,116,0.12);padding:9px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3)}
+.validity-bar{position:fixed;top:0;left:0;right:0;z-index:51;background:rgba(15,14,12,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,165,116,0.12);padding:9px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3)}
 .validity-bar em{color:var(--gold);font-style:normal}
 /* Nav */
 .nav{position:fixed;top:37px;left:0;right:0;z-index:50;padding:20px 0;background:rgba(15,14,12,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -277,7 +277,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li>2 reuniões mensais de estratégia</li>
           <li><strong>Hospedagem padrão + e-mail profissional inclusos</strong></li>
           <li><strong>6 meses de suporte</strong> · otimizações ilimitadas no período</li>
-          <li><strong><li><strong>Após 6 meses: R$ 369/mês opcional</strong> para suporte continuado</li>
+          <li><strong>Após 6 meses: R$ 369/mês</strong> para suporte continuado</li>
         <li><strong>Entrega em 30 a 45 dias</strong></li>
         </ul>
         <div class="package-recurrence">
