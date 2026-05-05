@@ -68,25 +68,36 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
 .package-list li{font-size:14px;color:var(--text-2);padding:10px 0;display:flex;align-items:flex-start;gap:12px;border-bottom:1px dashed var(--line);line-height:1.5}
 .package-list li:last-child{border-bottom:none}
 .package-list li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px}
+.package-list li.optional::before{background:transparent;border:1px solid var(--text-3)}
+.package-list li.optional{color:var(--text-3)}
 .package-list li strong{color:var(--text);font-weight:500}
-.hosting-intro{max-width:720px;margin-bottom:48px;font-size:15px;color:var(--text-2);line-height:1.6}
-.hosting-intro strong{color:var(--text);font-weight:500}
-.hosting-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.hosting-plan{background:var(--bg-2);border:1px solid var(--line);padding:32px 28px;display:flex;flex-direction:column;position:relative}
-.hosting-plan--featured{background:linear-gradient(180deg,#1F1A14 0%,#15110E 100%);border-color:var(--gold-2)}
-.hosting-plan-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.hosting-plan-name{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--text);margin-bottom:6px}
-.hosting-plan-essence{font-family:'Fraunces',serif;font-size:13px;font-style:italic;color:var(--text-2);margin-bottom:20px;line-height:1.4;min-height:36px}
-.hosting-plan-price-wrap{padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px}
-.hosting-plan-price{font-family:'Fraunces',serif;font-size:32px;font-weight:300;line-height:1;color:var(--text)}
-.hosting-plan-price small{font-size:14px;color:var(--text-3)}
-.hosting-plan-price-detail{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;color:var(--text-3);margin-top:6px}
-.hosting-plan-list{list-style:none;flex:1}
-.hosting-plan-list li{font-size:13px;color:var(--text-2);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
-.hosting-plan-list li::before{content:'';flex-shrink:0;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:7px}
-.hosting-plan-list li strong{color:var(--text);font-weight:500}
-.hosting-included-note{margin-top:36px;padding:24px;background:rgba(212,165,116,0.04);border-left:2px solid var(--gold);font-size:14px;color:var(--text-2);line-height:1.6}
-.hosting-included-note strong{color:var(--gold-pale);font-weight:500}
+/* === HOSPEDAGEM ÚNICA === */
+.hosting-single{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:16px}
+@media(max-width:768px){.hosting-single{grid-template-columns:1fr;gap:40px}}
+.hosting-card{background:var(--bg-2);border:1px solid var(--gold-2);padding:48px 40px}
+.hosting-card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hosting-card-name{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--text);line-height:1;margin-bottom:8px}
+.hosting-card-essence{font-family:'Fraunces',serif;font-size:14px;font-style:italic;color:var(--text-2);margin-bottom:32px;line-height:1.5}
+.hosting-card-price-wrap{padding:20px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);margin-bottom:32px}
+.hosting-card-price{font-family:'Fraunces',serif;font-size:44px;font-weight:300;line-height:1;color:var(--gold-pale);letter-spacing:-0.02em}
+.hosting-card-price small{font-size:16px;color:var(--text-3)}
+.hosting-card-price-detail{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--text-3);margin-top:8px}
+.hosting-card-list{list-style:none}
+.hosting-card-list li{font-size:14px;color:var(--text-2);padding:10px 0;display:flex;align-items:flex-start;gap:12px;border-bottom:1px dashed var(--line);line-height:1.5}
+.hosting-card-list li:last-child{border-bottom:none}
+.hosting-card-list li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px}
+.hosting-card-list li strong{color:var(--text);font-weight:500}
+.hosting-rules{display:flex;flex-direction:column;gap:24px}
+.hosting-rule{padding:28px 32px;background:var(--bg-2);border:1px solid var(--line);position:relative;padding-left:48px}
+.hosting-rule::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line-2)}
+.hosting-rule--included::before{background:var(--gold)}
+.hosting-rule--optional::before{background:var(--text-3)}
+.hosting-rule-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.hosting-rule--optional .hosting-rule-label{color:var(--text-3)}
+.hosting-rule-title{font-family:'Fraunces',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:6px}
+.hosting-rule-desc{font-size:14px;color:var(--text-2);line-height:1.6}
+.hosting-rule-desc strong{color:var(--text);font-weight:500}
+/* Notes */
 .notes{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:40px;border-top:1px solid var(--line)}
 .note-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .note-body{font-size:14px;color:var(--text-2);line-height:1.6}
@@ -121,7 +132,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease}
 .reveal.is-visible{opacity:1;transform:translateY(0)}
 .scroll-progress{position:fixed;top:0;left:0;height:1px;background:var(--gold);z-index:100;width:0%;transition:width 0.1s linear}
-@media(max-width:768px){.fact{grid-template-columns:1fr;gap:16px;padding:32px 0}.packages{grid-template-columns:1fr}.hosting-plans{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr;gap:20px}}
+@media(max-width:768px){.fact{grid-template-columns:1fr;gap:16px;padding:32px 0}.packages{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr;gap:20px}.steps::before{left:19px}}
 </style>
 </head>
 <body>
@@ -132,6 +143,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
     <div class="nav-status"><span class="status-dot"></span><span>Proposta confidencial</span></div>
   </div>
 </nav>
+
 <section class="hero">
   <div class="container hero-content">
     <div class="hero-tag">Proposta Comercial · 2026</div>
@@ -147,6 +159,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
     </div>
   </div>
 </section>
+
 <section class="section" id="diagnostico">
   <div class="container">
     <div class="section-header reveal">
@@ -173,6 +186,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
     <div class="quote-box reveal"><p class="quote-text">"Página bonita não garante venda. Estrutura inteligente, sim."</p></div>
   </div>
 </section>
+
 <section class="section" id="pacotes">
   <div class="container">
     <div class="section-header reveal">
@@ -192,6 +206,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li>Carregamento em menos de 1 segundo no celular</li>
           <li><strong>1 mês de suporte</strong> · até 4 otimizações no período</li>
           <li><strong>Entrega em 5 a 7 dias</strong></li>
+          <li class="optional">Hospedagem <strong>opcional</strong> — você hospeda onde quiser ou adiciona nosso plano padrão (+R$ 79/mês)</li>
         </ul>
       </article>
       <article class="package package--featured reveal">
@@ -205,7 +220,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li>Site rápido e bem ranqueado no Google</li>
           <li>Painel único: vendas, visitas e conversão em tempo real</li>
           <li>Mapas de calor: veja onde a galera clica e onde desiste</li>
-          <li><strong>Hospedagem profissional + e-mail inclusos</strong></li>
+          <li><strong>Hospedagem padrão + e-mail profissional inclusos</strong></li>
           <li><strong>3 meses de suporte</strong> · até 12 otimizações no período</li>
           <li>Reunião mensal pra ajustar estratégia com base em dados</li>
           <li><strong>Entrega em 15 a 20 dias</strong></li>
@@ -221,59 +236,61 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li>Otimização pro Google: público novo te encontrando sem ser pelo YouTube</li>
           <li>Testamos duas versões da página pra descobrir qual vende mais</li>
           <li>2 reuniões mensais de estratégia</li>
-          <li><strong>Hospedagem premium + e-mails ilimitados inclusos</strong></li>
+          <li><strong>Hospedagem padrão + e-mail profissional inclusos</strong></li>
           <li><strong>6 meses de suporte</strong> · otimizações ilimitadas no período</li>
           <li><strong>Após 6 meses: R$ 369/mês opcional</strong> para suporte continuado</li>
         </ul>
       </article>
     </div>
     <div class="notes">
-      <div class="reveal"><div class="note-title">Titularidade</div><p class="note-body">O domínio é registrado <strong>no seu nome</strong>. Você é dono da estrutura em qualquer cenário.</p></div>
+      <div class="reveal"><div class="note-title">Titularidade</div><p class="note-body">O domínio é registrado <strong>no seu nome</strong>. Você é dono da estrutura em qualquer cenário — eu sou estrategista e executor.</p></div>
       <div class="reveal"><div class="note-title">Pagamento</div><p class="note-body">PIX (5% off à vista) · Boleto · Cartão até 10x. Pacotes 02 e 03: 50% início, 50% entrega.</p></div>
       <div class="reveal"><div class="note-title">O que é "otimização"</div><p class="note-body">Ajustes de copy, imagens, cores, seções existentes. Não inclui página inteira nova ou redesign completo.</p></div>
     </div>
   </div>
 </section>
+
 <section class="section" id="hospedagem">
   <div class="container">
     <div class="section-header reveal">
       <div><div class="section-number">03 — Infraestrutura</div><h2 class="section-title">Hospedagem & <em>e-mail</em></h2></div>
-      <p class="section-lead">A casa onde seu site vive. Inclusa nos Pacotes 02 e 03 — contratada à parte no Pacote 01.</p>
+      <p class="section-lead">Um plano único, sem complicação. Incluso nos Pacotes 02 e 03 — opcional no Pacote 01.</p>
     </div>
-    <p class="hosting-intro reveal">Site no ar 24h por dia precisa de hospedagem profissional e e-mails com seu domínio (<strong>contato@seusite.com.br</strong>). Os planos abaixo cobrem tudo isso, com <strong>domínio próprio incluso</strong>.</p>
-    <div class="hosting-plans">
-      <article class="hosting-plan reveal">
-        <div class="hosting-plan-tag">Plano 01</div>
-        <h3 class="hosting-plan-name">Essencial</h3>
-        <p class="hosting-plan-essence">Pra manter o site no ar, monitorado e seguro.</p>
-        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 49<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 470/ano · 20% off</div></div>
-        <ul class="hosting-plan-list">
-          <li>Hospedagem profissional</li><li>Domínio próprio incluso (.com.br)</li><li>SSL + backups diários</li><li>1 e-mail profissional</li><li>Suporte em até 48h</li>
+    <div class="hosting-single reveal">
+      <div class="hosting-card">
+        <div class="hosting-card-tag">Plano Padrão</div>
+        <h3 class="hosting-card-name">Tudo que você precisa</h3>
+        <p class="hosting-card-essence">Hospedagem profissional, domínio próprio e e-mail no seu domínio. Sem surpresas, sem camadas.</p>
+        <div class="hosting-card-price-wrap">
+          <div class="hosting-card-price">R$ 79<small>/mês</small></div>
+          <div class="hosting-card-price-detail">ou R$ 759/ano · 20% off · domínio incluso</div>
+        </div>
+        <ul class="hosting-card-list">
+          <li>Hospedagem profissional (carregamento &lt;1s)</li>
+          <li>Domínio próprio incluso (.com.br ou .com)</li>
+          <li>Certificado de segurança SSL</li>
+          <li>Até 3 e-mails profissionais no seu domínio</li>
+          <li>Backups diários automáticos</li>
+          <li>Monitoramento de uptime 24/7</li>
+          <li>Suporte técnico em até 48h</li>
         </ul>
-      </article>
-      <article class="hosting-plan hosting-plan--featured reveal">
-        <div class="package-badge">Recomendado</div>
-        <div class="hosting-plan-tag">Plano 02</div>
-        <h3 class="hosting-plan-name">Profissional</h3>
-        <p class="hosting-plan-essence">Pra quem quer crescer com estrutura sólida.</p>
-        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 97<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 932/ano · 20% off</div></div>
-        <ul class="hosting-plan-list">
-          <li><strong>Tudo do Essencial, mais:</strong></li><li>Até 5 e-mails profissionais</li><li>Atualizações mensais</li><li>Pequenos ajustes (até 2h/mês)</li><li>Suporte em até 24h</li>
-        </ul>
-      </article>
-      <article class="hosting-plan reveal">
-        <div class="hosting-plan-tag">Plano 03</div>
-        <h3 class="hosting-plan-name">Premium</h3>
-        <p class="hosting-plan-essence">Estrutura premium pra negócios em escala.</p>
-        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 197<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 1.892/ano · 20% off</div></div>
-        <ul class="hosting-plan-list">
-          <li><strong>Tudo do Profissional, mais:</strong></li><li>E-mails ilimitados</li><li>Ajustes ilimitados (até 6h/mês)</li><li>Reunião mensal de desempenho</li><li>Suporte prioritário em até 12h</li>
-        </ul>
-      </article>
+      </div>
+      <div class="hosting-rules">
+        <div class="hosting-rule hosting-rule--included reveal">
+          <div class="hosting-rule-label">Incluído</div>
+          <div class="hosting-rule-title">Pacotes 02 e 03</div>
+          <p class="hosting-rule-desc">A hospedagem já está dentro do valor — sem cobranças à parte. Você foca no negócio, a estrutura roda sozinha.</p>
+        </div>
+        <div class="hosting-rule hosting-rule--optional reveal">
+          <div class="hosting-rule-label">Opcional</div>
+          <div class="hosting-rule-title">Pacote 01</div>
+          <p class="hosting-rule-desc">Você pode hospedar onde quiser — em qualquer servidor que já tenha. Se preferir nossa infraestrutura, é <strong>+R$ 79/mês</strong> e cuidamos de tudo por você.</p>
+        </div>
+      </div>
     </div>
-    <div class="hosting-included-note reveal"><strong>Importante:</strong> os planos de hospedagem são separados da criação das páginas. No <strong>Pacote 02</strong>, o plano Profissional já está incluso. No <strong>Pacote 03</strong>, o plano Premium é incluso durante os 6 meses iniciais.</div>
   </div>
 </section>
+
 <section class="section" id="execucao">
   <div class="container">
     <div class="section-header reveal">
@@ -289,6 +306,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
     </div>
   </div>
 </section>
+
 <section class="cta-section">
   <div class="container cta-content">
     <div class="cta-tag">Próximo passo</div>
@@ -300,12 +318,14 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
     </div>
   </div>
 </section>
+
 <footer class="footer">
   <div class="container footer-inner">
     <div class="signature"><span class="signature-name">Guilherme</span><span class="signature-title">Estrategista Digital · Oconker Digital</span></div>
     <div class="footer-meta">Oconker.digital<br>Proposta · 2026</div>
   </div>
 </footer>
+
 <script>
 const progressBar=document.getElementById('scrollProgress');
 window.addEventListener('scroll',()=>{const s=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;progressBar.style.width=s+'%'});
@@ -315,4 +335,4 @@ const r=document.getElementById('reverPacotes');
 if(r){r.addEventListener('click',(e)=>{e.preventDefault();document.getElementById('pacotes')?.scrollIntoView({behavior:'smooth',block:'start'})})}
 </script>
 </body>
-</html>
+  </html>
