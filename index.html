@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta · Fabrício Venâncio | Oconker Digital</title>
+<meta name="description" content="Proposta comercial confidencial para construção da estrutura digital de Fabrício Venâncio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0E0C;--bg-2:#161412;--bg-3:#1E1A16;--line:#2A2520;--line-2:#3A332C;--text:#F5EFE6;--text-2:#B8AC9C;--text-3:#756B5F;--gold:#D4A574;--gold-2:#B8895A;--gold-pale:#E8D4B0;--accent:#7BB6BC}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 32px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 0;background:rgba(15,14,12,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text);display:flex;align-items:center;gap:10px}
+.brand-mark{display:inline-block;width:8px;height:8px;border:1px solid var(--gold);border-radius:50%}
+.nav-status{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);display:flex;align-items:center;gap:8px}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+.hero-content{position:relative;z-index:1;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease-out 0.3s forwards}
+.hero-tag::before{content:'';width:36px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Fraunces',serif;font-size:clamp(48px,9vw,128px);font-weight:300;line-height:0.95;letter-spacing:-0.03em;color:var(--text);margin-bottom:32px}
+.hero-title-line{display:block;opacity:0;transform:translateY(40px);animation:fadeUp 1s cubic-bezier(0.2,0.8,0.2,1) forwards}
+.hero-title-line:nth-child(1){animation-delay:0.4s}
+.hero-title-line:nth-child(2){animation-delay:0.55s}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-subtitle{font-family:'Fraunces',serif;font-size:clamp(18px,2.2vw,24px);font-weight:300;font-style:italic;color:var(--text-2);max-width:540px;line-height:1.4;margin-top:16px;opacity:0;animation:fadeUp 0.8s ease-out 0.7s forwards}
+.hero-recipient{margin-top:80px;padding-top:32px;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:24px;opacity:0;animation:fadeUp 0.8s ease-out 0.9s forwards}
+.hero-recipient-block{display:flex;flex-direction:column;gap:4px}
+.hero-recipient-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-3)}
+.hero-recipient-value{font-family:'Fraunces',serif;font-size:20px;font-weight:400;color:var(--text)}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.section{padding:120px 0;position:relative}
+.section-header{margin-bottom:80px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.section-number{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-number::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1;letter-spacing:-0.02em;color:var(--text);max-width:720px}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-lead{font-family:'Fraunces',serif;font-size:18px;font-style:italic;font-weight:300;color:var(--text-2);max-width:380px;line-height:1.5}
+.facts{display:flex;flex-direction:column}
+.fact{display:grid;grid-template-columns:100px 1fr 1fr;gap:60px;padding:48px 0;border-top:1px solid var(--line);align-items:start}
+.fact:last-child{border-bottom:1px solid var(--line)}
+.fact-number{font-family:'Fraunces',serif;font-size:56px;font-weight:300;color:var(--gold);line-height:1;font-style:italic}
+.fact-title{font-family:'Fraunces',serif;font-size:24px;font-weight:400;color:var(--text);line-height:1.25}
+.fact-desc{color:var(--text-2);font-size:15px;line-height:1.65}
+.fact-desc strong{color:var(--text);font-weight:500}
+.quote-box{margin-top:80px;padding:48px;background:var(--bg-2);border-left:2px solid var(--gold)}
+.quote-text{font-family:'Fraunces',serif;font-size:clamp(22px,3vw,32px);font-weight:300;font-style:italic;color:var(--text);line-height:1.3}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
+.package{background:var(--bg-2);border:1px solid var(--line);padding:40px 32px;display:flex;flex-direction:column;position:relative;transition:all 0.4s ease}
+.package:hover{transform:translateY(-4px)}
+.package--featured{background:linear-gradient(180deg,#1F1A14 0%,#15110E 100%);border-color:var(--gold-2)}
+.package-badge{position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--gold);color:var(--bg);padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap}
+.package-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.package-name{font-family:'Fraunces',serif;font-size:32px;font-weight:300;color:var(--text);line-height:1;margin-bottom:12px}
+.package-essence{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--text-2);line-height:1.5;margin-bottom:32px;min-height:64px}
+.package-price-wrap{padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:28px}
+.package-price{font-family:'Fraunces',serif;font-size:44px;font-weight:300;line-height:1;color:var(--text);letter-spacing:-0.02em}
+.package--featured .package-price{color:var(--gold-pale)}
+.package-price-detail{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--text-3);margin-top:8px}
+.package-list{list-style:none;flex:1}
+.package-list li{font-size:14px;color:var(--text-2);padding:10px 0;display:flex;align-items:flex-start;gap:12px;border-bottom:1px dashed var(--line);line-height:1.5}
+.package-list li:last-child{border-bottom:none}
+.package-list li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px}
+.package-list li strong{color:var(--text);font-weight:500}
+.hosting-intro{max-width:720px;margin-bottom:48px;font-size:15px;color:var(--text-2);line-height:1.6}
+.hosting-intro strong{color:var(--text);font-weight:500}
+.hosting-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hosting-plan{background:var(--bg-2);border:1px solid var(--line);padding:32px 28px;display:flex;flex-direction:column;position:relative}
+.hosting-plan--featured{background:linear-gradient(180deg,#1F1A14 0%,#15110E 100%);border-color:var(--gold-2)}
+.hosting-plan-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.hosting-plan-name{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--text);margin-bottom:6px}
+.hosting-plan-essence{font-family:'Fraunces',serif;font-size:13px;font-style:italic;color:var(--text-2);margin-bottom:20px;line-height:1.4;min-height:36px}
+.hosting-plan-price-wrap{padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px}
+.hosting-plan-price{font-family:'Fraunces',serif;font-size:32px;font-weight:300;line-height:1;color:var(--text)}
+.hosting-plan-price small{font-size:14px;color:var(--text-3)}
+.hosting-plan-price-detail{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;color:var(--text-3);margin-top:6px}
+.hosting-plan-list{list-style:none;flex:1}
+.hosting-plan-list li{font-size:13px;color:var(--text-2);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
+.hosting-plan-list li::before{content:'';flex-shrink:0;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:7px}
+.hosting-plan-list li strong{color:var(--text);font-weight:500}
+.hosting-included-note{margin-top:36px;padding:24px;background:rgba(212,165,116,0.04);border-left:2px solid var(--gold);font-size:14px;color:var(--text-2);line-height:1.6}
+.hosting-included-note strong{color:var(--gold-pale);font-weight:500}
+.notes{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:40px;border-top:1px solid var(--line)}
+.note-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.note-body{font-size:14px;color:var(--text-2);line-height:1.6}
+.note-body strong{color:var(--text);font-weight:500}
+.steps{display:flex;flex-direction:column;position:relative}
+.steps::before{content:'';position:absolute;left:39px;top:30px;bottom:30px;width:1px;background:linear-gradient(180deg,var(--gold) 0%,var(--line) 100%)}
+.step{display:grid;grid-template-columns:80px 1fr;gap:40px;padding:28px 0;align-items:start;position:relative}
+.step-number{font-family:'Fraunces',serif;font-size:28px;font-weight:400;color:var(--gold);line-height:1;font-style:italic;background:var(--bg);padding:8px 0;position:relative;z-index:2;text-align:center;width:80px}
+.step-content{padding-top:12px}
+.step-title{font-family:'Fraunces',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--text-2);line-height:1.6}
+.cta-section{padding:100px 0 120px;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;margin-top:60px}
+.cta-content{position:relative;z-index:1}
+.cta-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.cta-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(36px,6vw,72px);font-weight:300;line-height:1;letter-spacing:-0.02em;color:var(--text);margin-bottom:32px;max-width:800px}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-text{font-size:16px;color:var(--text-2);line-height:1.65;max-width:580px;margin-bottom:48px}
+.cta-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:18px 32px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.4s ease;cursor:pointer;position:relative;overflow:hidden}
+.btn-primary{background:var(--gold);color:var(--bg);border:1px solid var(--gold)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--line-2)}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.btn-arrow{display:inline-block;transition:transform 0.3s ease}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+.footer{padding:60px 0 40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.signature{display:flex;flex-direction:column;gap:4px}
+.signature-name{font-family:'Fraunces',serif;font-size:24px;font-weight:400;color:var(--text);font-style:italic}
+.signature-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-3)}
+.footer-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);text-align:right;line-height:1.8}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.scroll-progress{position:fixed;top:0;left:0;height:1px;background:var(--gold);z-index:100;width:0%;transition:width 0.1s linear}
+@media(max-width:768px){.fact{grid-template-columns:1fr;gap:16px;padding:32px 0}.packages{grid-template-columns:1fr}.hosting-plans{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr;gap:20px}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><span class="brand-mark"></span><span>Oconker Digital</span></div>
+    <div class="nav-status"><span class="status-dot"></span><span>Proposta confidencial</span></div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-tag">Proposta Comercial · 2026</div>
+    <h1 class="hero-title">
+      <span class="hero-title-line">Estrutura digital</span>
+      <span class="hero-title-line">para <em>infoprodutores</em></span>
+    </h1>
+    <p class="hero-subtitle">Construção do ecossistema digital que sustenta a próxima fase do seu negócio.</p>
+    <div class="hero-recipient">
+      <div class="hero-recipient-block"><span class="hero-recipient-label">Para</span><span class="hero-recipient-value">Fabrício Venâncio</span></div>
+      <div class="hero-recipient-block"><span class="hero-recipient-label">Projeto</span><span class="hero-recipient-value">Páginas de conversão</span></div>
+      <div class="hero-recipient-block"><span class="hero-recipient-label">Por</span><span class="hero-recipient-value">Guilherme · Oconker Digital</span></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="diagnostico">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><div class="section-number">01 — Diagnóstico</div><h2 class="section-title">O que vi no seu <em>negócio</em></h2></div>
+      <p class="section-lead">Antes do orçamento — esta proposta nasce do que você me contou no áudio. Três fatos do seu negócio.</p>
+    </div>
+    <div class="facts">
+      <div class="fact reveal">
+        <div class="fact-number">01</div>
+        <div class="fact-title">Você tem uma escada de valor real</div>
+        <div class="fact-desc"><strong>Ativador R$ 97 → Protocolo R$ 400 → Mentoria R$ 20 mil.</strong> Não é produto solto — é negócio com profundidade. A estrutura precisa estar à altura.</div>
+      </div>
+      <div class="fact reveal">
+        <div class="fact-number">02</div>
+        <div class="fact-title">Tráfego 100% YouTube</div>
+        <div class="fact-desc">Autoridade orgânica pura. <strong>O lado bom:</strong> público qualificado. <strong>O lado de risco:</strong> dependência de uma única fonte que precisa converter o máximo possível.</div>
+      </div>
+      <div class="fact reveal">
+        <div class="fact-number">03</div>
+        <div class="fact-title">Você sabe de onde vem a venda — mas não por que parte da galera não compra</div>
+        <div class="fact-desc">Você tem dado de origem (UTMs separados YouTube vs grupo). Falta dado de <strong>comportamento dentro da página</strong>. Esse é o ponto cego que vou cobrir.</div>
+      </div>
+    </div>
+    <div class="quote-box reveal"><p class="quote-text">"Página bonita não garante venda. Estrutura inteligente, sim."</p></div>
+  </div>
+</section>
+<section class="section" id="pacotes">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><div class="section-number">02 — Proposta</div><h2 class="section-title">Três <em>caminhos</em></h2></div>
+      <p class="section-lead">Cada caminho corresponde a um momento diferente do seu negócio. Você decide a velocidade.</p>
+    </div>
+    <div class="packages">
+      <article class="package reveal">
+        <div class="package-tag">Pacote 01</div>
+        <h3 class="package-name">Essencial</h3>
+        <p class="package-essence">Uma página de venda profissional, no ar em uma semana.</p>
+        <div class="package-price-wrap"><div class="package-price">R$ 497</div><div class="package-price-detail">à vista · ou em até 10x</div></div>
+        <ul class="package-list">
+          <li>Página de venda profissional, focada em converter</li>
+          <li>Você vê quem entra, de onde vem e como se comporta</li>
+          <li>Conexão direta com Hotmart + botão de WhatsApp</li>
+          <li>Carregamento em menos de 1 segundo no celular</li>
+          <li><strong>1 mês de suporte</strong> · até 4 otimizações no período</li>
+          <li><strong>Entrega em 5 a 7 dias</strong></li>
+        </ul>
+      </article>
+      <article class="package package--featured reveal">
+        <div class="package-badge">Recomendado</div>
+        <div class="package-tag">Pacote 02</div>
+        <h3 class="package-name">Estrutura</h3>
+        <p class="package-essence">Site central + páginas de produtos + painel de controle com suporte mensal.</p>
+        <div class="package-price-wrap"><div class="package-price">R$ 2.497</div><div class="package-price-detail">setup · + R$ 297/mês após 3 meses</div></div>
+        <ul class="package-list">
+          <li>Site central (a casa da sua marca) + até 5 páginas de produtos</li>
+          <li>Site rápido e bem ranqueado no Google</li>
+          <li>Painel único: vendas, visitas e conversão em tempo real</li>
+          <li>Mapas de calor: veja onde a galera clica e onde desiste</li>
+          <li><strong>Hospedagem profissional + e-mail inclusos</strong></li>
+          <li><strong>3 meses de suporte</strong> · até 12 otimizações no período</li>
+          <li>Reunião mensal pra ajustar estratégia com base em dados</li>
+          <li><strong>Entrega em 15 a 20 dias</strong></li>
+        </ul>
+      </article>
+      <article class="package reveal">
+        <div class="package-tag">Pacote 03</div>
+        <h3 class="package-name">Completo</h3>
+        <p class="package-essence">Estrutura completa com otimização avançada e 6 meses de evolução.</p>
+        <div class="package-price-wrap"><div class="package-price">R$ 4.997</div><div class="package-price-detail">6 meses · tudo incluso</div></div>
+        <ul class="package-list">
+          <li>Tudo do Estrutura, sem limite de páginas</li>
+          <li>Otimização pro Google: público novo te encontrando sem ser pelo YouTube</li>
+          <li>Testamos duas versões da página pra descobrir qual vende mais</li>
+          <li>2 reuniões mensais de estratégia</li>
+          <li><strong>Hospedagem premium + e-mails ilimitados inclusos</strong></li>
+          <li><strong>6 meses de suporte</strong> · otimizações ilimitadas no período</li>
+          <li><strong>Após 6 meses: R$ 369/mês opcional</strong> para suporte continuado</li>
+        </ul>
+      </article>
+    </div>
+    <div class="notes">
+      <div class="reveal"><div class="note-title">Titularidade</div><p class="note-body">O domínio é registrado <strong>no seu nome</strong>. Você é dono da estrutura em qualquer cenário.</p></div>
+      <div class="reveal"><div class="note-title">Pagamento</div><p class="note-body">PIX (5% off à vista) · Boleto · Cartão até 10x. Pacotes 02 e 03: 50% início, 50% entrega.</p></div>
+      <div class="reveal"><div class="note-title">O que é "otimização"</div><p class="note-body">Ajustes de copy, imagens, cores, seções existentes. Não inclui página inteira nova ou redesign completo.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="hospedagem">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><div class="section-number">03 — Infraestrutura</div><h2 class="section-title">Hospedagem & <em>e-mail</em></h2></div>
+      <p class="section-lead">A casa onde seu site vive. Inclusa nos Pacotes 02 e 03 — contratada à parte no Pacote 01.</p>
+    </div>
+    <p class="hosting-intro reveal">Site no ar 24h por dia precisa de hospedagem profissional e e-mails com seu domínio (<strong>contato@seusite.com.br</strong>). Os planos abaixo cobrem tudo isso, com <strong>domínio próprio incluso</strong>.</p>
+    <div class="hosting-plans">
+      <article class="hosting-plan reveal">
+        <div class="hosting-plan-tag">Plano 01</div>
+        <h3 class="hosting-plan-name">Essencial</h3>
+        <p class="hosting-plan-essence">Pra manter o site no ar, monitorado e seguro.</p>
+        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 49<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 470/ano · 20% off</div></div>
+        <ul class="hosting-plan-list">
+          <li>Hospedagem profissional</li><li>Domínio próprio incluso (.com.br)</li><li>SSL + backups diários</li><li>1 e-mail profissional</li><li>Suporte em até 48h</li>
+        </ul>
+      </article>
+      <article class="hosting-plan hosting-plan--featured reveal">
+        <div class="package-badge">Recomendado</div>
+        <div class="hosting-plan-tag">Plano 02</div>
+        <h3 class="hosting-plan-name">Profissional</h3>
+        <p class="hosting-plan-essence">Pra quem quer crescer com estrutura sólida.</p>
+        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 97<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 932/ano · 20% off</div></div>
+        <ul class="hosting-plan-list">
+          <li><strong>Tudo do Essencial, mais:</strong></li><li>Até 5 e-mails profissionais</li><li>Atualizações mensais</li><li>Pequenos ajustes (até 2h/mês)</li><li>Suporte em até 24h</li>
+        </ul>
+      </article>
+      <article class="hosting-plan reveal">
+        <div class="hosting-plan-tag">Plano 03</div>
+        <h3 class="hosting-plan-name">Premium</h3>
+        <p class="hosting-plan-essence">Estrutura premium pra negócios em escala.</p>
+        <div class="hosting-plan-price-wrap"><div class="hosting-plan-price">R$ 197<small>/mês</small></div><div class="hosting-plan-price-detail">ou R$ 1.892/ano · 20% off</div></div>
+        <ul class="hosting-plan-list">
+          <li><strong>Tudo do Profissional, mais:</strong></li><li>E-mails ilimitados</li><li>Ajustes ilimitados (até 6h/mês)</li><li>Reunião mensal de desempenho</li><li>Suporte prioritário em até 12h</li>
+        </ul>
+      </article>
+    </div>
+    <div class="hosting-included-note reveal"><strong>Importante:</strong> os planos de hospedagem são separados da criação das páginas. No <strong>Pacote 02</strong>, o plano Profissional já está incluso. No <strong>Pacote 03</strong>, o plano Premium é incluso durante os 6 meses iniciais.</div>
+  </div>
+</section>
+<section class="section" id="execucao">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><div class="section-number">04 — Execução</div><h2 class="section-title">Como <em>começamos</em></h2></div>
+      <p class="section-lead">O fluxo de início é o mesmo em qualquer pacote. Direto, sem burocracia.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-number">01</div><div class="step-content"><h3 class="step-title">Você escolhe o pacote</h3><p class="step-desc">Me avisa por WhatsApp qual caminho faz sentido pro seu momento.</p></div></div>
+      <div class="step reveal"><div class="step-number">02</div><div class="step-content"><h3 class="step-title">Briefing rápido</h3><p class="step-desc">Te mando perguntas-chave (15 min). Você responde por escrito ou áudio.</p></div></div>
+      <div class="step reveal"><div class="step-number">03</div><div class="step-content"><h3 class="step-title">Execução</h3><p class="step-desc">Pacote 01: começa no dia útil seguinte ao pagamento. Pacotes 02 e 03: setup técnico em 48h.</p></div></div>
+      <div class="step reveal"><div class="step-number">04</div><div class="step-content"><h3 class="step-title">Aprovações pelo caminho</h3><p class="step-desc">Você aprova layout, copy e preview antes de cada etapa ir ao ar.</p></div></div>
+      <div class="step reveal"><div class="step-number">05</div><div class="step-content"><h3 class="step-title">Entrega + ativação</h3><p class="step-desc">Tudo no ar, monitoramento ativo, painel de controle funcionando.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container cta-content">
+    <div class="cta-tag">Próximo passo</div>
+    <h2 class="cta-title">Vamos <em>conversar</em>?</h2>
+    <p class="cta-text">Eu acompanho seu canal e acredito no que você está construindo. O nicho de metafísica e desenvolvimento pessoal no Brasil ainda está se consolidando — quem construir estrutura sólida agora vira referência nos próximos anos. Assim como você eu também não acredito em coincidência e essa situação não é por acaso, eu já estou firme nesta linha do tempo e sei que isso já é muito bom para nós dois.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/5511988785187?text=Oi%20Guilherme%2C%20vamos%20conversar%20sobre%20a%20proposta" class="btn btn-primary" target="_blank"><span>Falar no WhatsApp</span><span class="btn-arrow">→</span></a>
+      <a href="#pacotes" class="btn btn-secondary" id="reverPacotes"><span>Rever os pacotes</span></a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="signature"><span class="signature-name">Guilherme</span><span class="signature-title">Estrategista Digital · Oconker Digital</span></div>
+    <div class="footer-meta">Oconker.digital<br>Proposta · 2026</div>
+  </div>
+</footer>
+<script>
+const progressBar=document.getElementById('scrollProgress');
+window.addEventListener('scroll',()=>{const s=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;progressBar.style.width=s+'%'});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-visible')})},{threshold:0.1,rootMargin:'0px 0px -80px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const r=document.getElementById('reverPacotes');
+if(r){r.addEventListener('click',(e)=>{e.preventDefault();document.getElementById('pacotes')?.scrollIntoView({behavior:'smooth',block:'start'})})}
+</script>
+</body>
+</html>
