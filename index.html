@@ -14,14 +14,18 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
 .container{width:100%;max-width:1180px;margin:0 auto;padding:0 32px}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 0;background:rgba(15,14,12,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+/* Validity bar */
+.validity-bar{background:rgba(212,165,116,0.05);border-bottom:1px solid rgba(212,165,116,0.12);padding:9px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3)}
+.validity-bar em{color:var(--gold);font-style:normal}
+/* Nav */
+.nav{position:fixed;top:37px;left:0;right:0;z-index:50;padding:20px 0;background:rgba(15,14,12,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center}
 .brand{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text);display:flex;align-items:center;gap:10px}
 .brand-mark{display:inline-block;width:8px;height:8px;border:1px solid var(--gold);border-radius:50%}
 .nav-status{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);display:flex;align-items:center;gap:8px}
 .status-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 80px;overflow:hidden}
 .hero-content{position:relative;z-index:1;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease-out 0.3s forwards}
 .hero-tag::before{content:'';width:36px;height:1px;background:var(--gold)}
@@ -71,9 +75,15 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
 .package-list li.optional::before{background:transparent;border:1px solid var(--text-3)}
 .package-list li.optional{color:var(--text-3)}
 .package-list li strong{color:var(--text);font-weight:500}
-/* === HOSPEDAGEM ÚNICA === */
+/* Recurrence block */
+.package-recurrence{margin-top:24px;padding:20px 24px;background:rgba(212,165,116,0.05);border:1px solid rgba(212,165,116,0.15);border-radius:0}
+.package-recurrence-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.package-recurrence-list{list-style:none}
+.package-recurrence-list li{font-size:13px;color:var(--text-2);padding:6px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
+.package-recurrence-list li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.package-recurrence-list li strong{color:var(--text);font-weight:500}
+/* Hosting */
 .hosting-single{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:16px}
-@media(max-width:768px){.hosting-single{grid-template-columns:1fr;gap:40px}}
 .hosting-card{background:var(--bg-2);border:1px solid var(--gold-2);padding:48px 40px}
 .hosting-card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .hosting-card-name{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--text);line-height:1;margin-bottom:8px}
@@ -131,12 +141,19 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
 .footer-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);text-align:right;line-height:1.8}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease}
 .reveal.is-visible{opacity:1;transform:translateY(0)}
-.scroll-progress{position:fixed;top:0;left:0;height:1px;background:var(--gold);z-index:100;width:0%;transition:width 0.1s linear}
-@media(max-width:768px){.fact{grid-template-columns:1fr;gap:16px;padding:32px 0}.packages{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr;gap:20px}.steps::before{left:19px}}
+.scroll-progress{position:fixed;top:0;left:0;height:1px;background:var(--gold);z-index:200;width:0%;transition:width 0.1s linear}
+@media(max-width:768px){.fact{grid-template-columns:1fr;gap:16px;padding:32px 0}.packages{grid-template-columns:1fr}.hosting-single{grid-template-columns:1fr;gap:40px}.notes{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr;gap:20px}.steps::before{left:19px}.nav{top:33px}}
 </style>
 </head>
 <body>
+
 <div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- VALIDITY BAR -->
+<div class="validity-bar">
+  Proposta válida até <em>12 de maio de 2026</em> &nbsp;·&nbsp; Confidencial
+</div>
+
 <nav class="nav">
   <div class="container nav-inner">
     <div class="brand"><span class="brand-mark"></span><span>Oconker Digital</span></div>
@@ -194,11 +211,16 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
       <p class="section-lead">Cada caminho corresponde a um momento diferente do seu negócio. Você decide a velocidade.</p>
     </div>
     <div class="packages">
+
+      <!-- PACOTE 01 -->
       <article class="package reveal">
         <div class="package-tag">Pacote 01</div>
         <h3 class="package-name">Essencial</h3>
         <p class="package-essence">Uma página de venda profissional, no ar em uma semana.</p>
-        <div class="package-price-wrap"><div class="package-price">R$ 497</div><div class="package-price-detail">à vista · ou em até 10x</div></div>
+        <div class="package-price-wrap">
+          <div class="package-price">R$ 497</div>
+          <div class="package-price-detail">à vista · ou em até 10x · pagamento único</div>
+        </div>
         <ul class="package-list">
           <li>Página de venda profissional, focada em converter</li>
           <li>Você vê quem entra, de onde vem e como se comporta</li>
@@ -209,28 +231,45 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li class="optional">Hospedagem <strong>opcional</strong> — você hospeda onde quiser ou adiciona nosso plano padrão (+R$ 79/mês)</li>
         </ul>
       </article>
+
+      <!-- PACOTE 02 -->
       <article class="package package--featured reveal">
         <div class="package-badge">Recomendado</div>
         <div class="package-tag">Pacote 02</div>
         <h3 class="package-name">Estrutura</h3>
-        <p class="package-essence">Site central + páginas de produtos + painel de controle com suporte mensal.</p>
-        <div class="package-price-wrap"><div class="package-price">R$ 2.497</div><div class="package-price-detail">setup · + R$ 297/mês após 3 meses</div></div>
+        <p class="package-essence">Site central + páginas de produtos + painel de controle. Contrato de 6 meses.</p>
+        <div class="package-price-wrap">
+          <div class="package-price">R$ 2.497</div>
+          <div class="package-price-detail">setup · 3 meses iniciais inclusos</div>
+        </div>
         <ul class="package-list">
           <li>Site central (a casa da sua marca) + até 5 páginas de produtos</li>
           <li>Site rápido e bem ranqueado no Google</li>
           <li>Painel único: vendas, visitas e conversão em tempo real</li>
           <li>Mapas de calor: veja onde a galera clica e onde desiste</li>
           <li><strong>Hospedagem padrão + e-mail profissional inclusos</strong></li>
-          <li><strong>3 meses de suporte</strong> · até 12 otimizações no período</li>
           <li>Reunião mensal pra ajustar estratégia com base em dados</li>
           <li><strong>Entrega em 15 a 20 dias</strong></li>
         </ul>
+        <div class="package-recurrence">
+          <div class="package-recurrence-label">A partir do 4º mês · + R$ 297/mês</div>
+          <ul class="package-recurrence-list">
+            <li><strong>1 página nova</strong> por mês, quando quiser</li>
+            <li>Manutenção contínua das páginas existentes</li>
+            <li>Até <strong>4 otimizações por mês</strong> no total</li>
+          </ul>
+        </div>
       </article>
+
+      <!-- PACOTE 03 -->
       <article class="package reveal">
         <div class="package-tag">Pacote 03</div>
         <h3 class="package-name">Completo</h3>
         <p class="package-essence">Estrutura completa com otimização avançada e 6 meses de evolução.</p>
-        <div class="package-price-wrap"><div class="package-price">R$ 4.997</div><div class="package-price-detail">6 meses · tudo incluso</div></div>
+        <div class="package-price-wrap">
+          <div class="package-price">R$ 4.997</div>
+          <div class="package-price-detail">6 meses · tudo incluso</div>
+        </div>
         <ul class="package-list">
           <li>Tudo do Estrutura, sem limite de páginas</li>
           <li>Otimização pro Google: público novo te encontrando sem ser pelo YouTube</li>
@@ -241,6 +280,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,
           <li><strong>Após 6 meses: R$ 369/mês opcional</strong> para suporte continuado</li>
         </ul>
       </article>
+
     </div>
     <div class="notes">
       <div class="reveal"><div class="note-title">Titularidade</div><p class="note-body">O domínio é registrado <strong>no seu nome</strong>. Você é dono da estrutura em qualquer cenário — eu sou estrategista e executor.</p></div>
